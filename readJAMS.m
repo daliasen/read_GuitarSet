@@ -1,5 +1,5 @@
 function [data_structs, F] = readJAMS(directory)
-% Read all JAM files in a directory and add their contents into an array
+% Read all JAMS files in a directory and add their contents into an array
 %   of structures
 %
 % Inputs:
