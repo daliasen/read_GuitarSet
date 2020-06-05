@@ -1,9 +1,10 @@
-function [data_structs, F] = readJAMS(directory)
+function [data_structs, F] = readJAMS(directory, postfix)
 % Read all JAMS files in a directory and add their contents into an array
 %   of structures
 %
 % Inputs:
 %   1) directory - a path to the folder containing JAMS files
+%   2) postfix - recording type - either "solo" or "comp"
 %
 % Outputs:
 %   1) data_structs - an array of structures containing data from JAMS 
@@ -11,7 +12,7 @@ function [data_structs, F] = readJAMS(directory)
 %   2) F - attributes of the JAMS files sorted in ascending order by file 
 %       name
 
-F = dir([directory '*.jams']);
+F = dir([directory '*' postfix '.jams']);
 [~, order] = sort({F.name});
 F = F(order);
 
